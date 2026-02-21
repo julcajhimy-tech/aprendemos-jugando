@@ -1,0 +1,132 @@
+================================================================================
+   APRENDEMOS JUGANDO — REGISTRO DE CAMBIOS (CHANGELOG)
+   Juego Interactivo de Matemáticas | Tug-of-War Edition
+================================================================================
+
+FORMATO DE VERSIÓN: MAYOR.MENOR.PARCHE
+  MAYOR  → Cambios incompatibles o rediseños completos
+  MENOR  → Nuevas funcionalidades compatibles hacia atrás
+  PARCHE → Correcciones de errores y ajustes menores
+
+TIPOS DE CAMBIO:
+  [ADD]    → Nueva funcionalidad añadida
+  [FIX]    → Corrección de error o bug
+  [CHANGE] → Modificación de funcionalidad existente
+  [REMOVE] → Eliminación de funcionalidad
+  [STYLE]  → Cambios de diseño o estilos visuales
+  [DOCS]   → Cambios en documentación
+  [PERF]   → Mejoras de rendimiento
+  [SCALE]  → Preparación para escalabilidad
+
+================================================================================
+  VERSIÓN 1.0.0 — Lanzamiento inicial
+  Fecha: 2026-02-17
+  Autor: Equipo de Desarrollo
+================================================================================
+
+[ADD] Pantalla de inicio con logo, título "Aprendemos Jugando" y selector de ops
+[ADD] Selector de operaciones básicas: suma (+), resta (−), multiplicación (×), div (÷)
+[ADD] Juego simultáneo para 2 equipos con tarjetas independientes
+[ADD] Teclado numérico visual por equipo (botones de colores)
+[ADD] Visualización de cuerda animada con Canvas API
+[ADD] Figuras geométricas y números flotando en el fondo (Canvas)
+[ADD] Sistema de puntaje y contador de intentos (MAX_ATTEMPTS = 5)
+[ADD] Pantalla de resultados con confetti animado
+[ADD] Mensajes motivadores aleatorios al finalizar
+[ADD] Detección automática de ganador o empate
+[ADD] Diseño responsivo (móvil y escritorio)
+[ADD] Fuente "Fredoka One" de Google Fonts para estética lúdica
+[ADD] Generador de preguntas aleatorias por operación (genQuestion)
+[ADD] Feedback visual: verde (correcto) / rojo (incorrecto) + animación shake
+[ADD] Botones de reiniciar y volver al inicio desde pantalla de resultados
+
+================================================================================
+  PENDIENTE — VERSIÓN 1.1.0 (Próxima release)
+  Prioridad: ALTA
+================================================================================
+
+[ADD] Temporizador por pregunta (configurable: 10, 20, 30 segundos)
+[ADD] Efectos de sonido: correcto, incorrecto, fanfarria final
+[ADD] Animación de figura jalando cuerda más expresiva (frame por frame)
+[ADD] Indicador visual de turno / estado de cada equipo
+[FIX] Revisar renderizado de Canvas en pantallas de alta densidad (Retina)
+[STYLE] Mejorar contraste de colores para accesibilidad (WCAG AA)
+
+================================================================================
+  PENDIENTE — VERSIÓN 1.2.0
+  Prioridad: MEDIA
+================================================================================
+
+[ADD] Tres niveles de dificultad:
+        · Fácil  → números del 1 al 10
+        · Medio  → números del 1 al 20 (actual)
+        · Difícil → números del 1 al 50 / fracciones básicas
+[ADD] Selección de cantidad de intentos: 3, 5, 7, 10
+[ADD] Animaciones de entrada por pantalla (fade-in suave)
+[ADD] Pantalla de configuración separada con más opciones
+[ADD] Modo "Un solo jugador" vs CPU
+[CHANGE] Separar genQuestion en módulo independiente src/utils/questions.js
+[DOCS] Agregar JSDoc a todos los componentes y funciones
+
+================================================================================
+  PENDIENTE — VERSIÓN 1.3.0
+  Prioridad: MEDIA
+================================================================================
+
+[ADD] Historial de partidas local (localStorage)
+[ADD] Tabla de posiciones local (ranking por equipo)
+[ADD] Compartir resultado como imagen (html2canvas)
+[ADD] Modo "Torneo": serie de 3 rondas, gana quien gane 2
+[SCALE] Extraer componentes a archivos separados:
+          src/components/QuestionCard.jsx
+          src/components/TugVisual.jsx
+          src/components/AnimatedBackground.jsx
+          src/components/Confetti.jsx
+[SCALE] Crear contexto global: src/context/GameContext.jsx
+[SCALE] Separar lógica del juego: src/hooks/useGameLogic.js
+
+================================================================================
+  PENDIENTE — VERSIÓN 2.0.0 (Visión a largo plazo)
+  Prioridad: BAJA / FUTURA
+================================================================================
+
+[ADD] Backend (Node.js + Express o Supabase) para:
+        · Autenticación de usuarios y equipos
+        · Almacenamiento de partidas en base de datos
+        · Ranking global / por institución
+[ADD] Modo multijugador en red (WebSockets / Socket.io)
+        · Equipos en diferentes dispositivos
+        · Sala de juego con código de invitación
+[ADD] Panel de administración para docentes:
+        · Crear operaciones personalizadas
+        · Ver historial de alumnos
+        · Exportar reportes en PDF
+[ADD] Soporte multiidioma (i18n): español, inglés, portugués
+[ADD] App móvil nativa (React Native o Capacitor)
+[ADD] Modo accesibilidad: lector de pantalla, alto contraste, tamaño de fuente
+
+================================================================================
+  INSTRUCCIONES PARA REGISTRAR UN NUEVO CAMBIO
+================================================================================
+
+Al realizar cualquier modificación al proyecto:
+
+  1. Abre este archivo CHANGELOG.txt
+  2. Ubica la sección correspondiente o crea una nueva versión:
+       ========================================
+         VERSIÓN X.Y.Z — Descripción breve
+         Fecha: YYYY-MM-DD
+         Autor: Tu nombre
+       ========================================
+  3. Agrega el cambio con el prefijo correcto: [ADD], [FIX], [CHANGE], etc.
+  4. Actualiza el número de versión en package.json
+  5. Haz commit con el mensaje: "chore: bump version to X.Y.Z"
+
+  EJEMPLO:
+       [FIX] Corregido bug donde el teclado numérico no respondía en iOS Safari
+       [ADD] Agregado modo oscuro togglable desde el header
+       [CHANGE] MAX_ATTEMPTS cambiado de 5 a 7 por defecto
+
+================================================================================
+  FIN DEL ARCHIVO — aprendemos-jugando CHANGELOG v1.0.0
+================================================================================
